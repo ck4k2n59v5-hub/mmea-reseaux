@@ -1,0 +1,51 @@
+name: Rapport réseaux MMEA
+
+on:
+  schedule:
+    # 05:30 UTC = 06:30 en hiver / 07:30 en été (heure suisse).
+    # GitHub peut avoir jusqu'à ~30 min de retard sur les tâches planifiées.
+    - cron: "30 5 * * *"
+  workflow_dispatch: {}   # bouton "Run workflow" pour lancer à la main
+
+permissions:
+  contents: write   # pour sauvegarder state.json dans le repo
+
+concurrency:
+  group: rapport-mmea
+  cancel-in-progress: false
+
+jobs:
+  rapport:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
+        run: pip install requests
+
+      - name: Récupérer les stats et envoyer l'email
+        env:
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          REPORT_TO: ${{ secrets.REPORT_TO }}
+          GRAPH_VERSION: ${{ secrets.GRAPH_VERSION }}
+        run: python mmea_report.py
+
+      - name: Sauvegarder l'état du jour
+        if: always()
+        run: |
+          if [ -f state.json ]; then
+            git config user.name "mmea-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add state.json
+            git diff --cached --quiet || git commit -m "État du $(date -u +%F)"
+            git push
+          fi
