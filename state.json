@@ -1,6 +1,6 @@
 {
  "facebook": {
-  "followers": 3,
+  "followers": 7,
   "posts": {
    "284168364785456_122337787706305889": {
     "likes": 0,
@@ -9,7 +9,7 @@
     "link": "https://www.facebook.com/122337856568305889/posts/122337787706305889"
    },
    "284168364785456_122337591824305889": {
-    "likes": 0,
+    "likes": 1,
     "created": "2026-11-21T16:57:08+0000",
     "text": "On regarde les murs, on oublie le sol. C'est pourtant lui qui donne le ton de la pièce.\n\nLames de chêne, huilées et coll",
     "link": "https://www.facebook.com/122337856568305889/posts/122337591824305889"
@@ -29,10 +29,10 @@
   }
  },
  "instagram": {
-  "followers": 21,
+  "followers": 19,
   "posts": {
    "18642187837054206": {
-    "likes": 5,
+    "likes": 7,
     "created": "2026-11-23T17:03:46+0000",
     "text": "Habiller une scène, c'est intégrer les contraintes phoniques et acoustiques à l'esthétique du lieu.\n\nPanneaux acoustique",
     "link": "https://www.instagram.com/p/DgF333juc8Y/"
@@ -45,5 +45,5 @@
    }
   }
  },
- "last_run": "2026-11-24T10:34:17+0000"
+ "last_run": "2026-11-25T07:01:17+0000"
 }
