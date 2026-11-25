@@ -2,9 +2,11 @@ name: Rapport réseaux MMEA
 
 on:
   schedule:
-    # 05:30 UTC = 06:30 en hiver / 07:30 en été (heure suisse).
-    # GitHub peut avoir jusqu'à ~30 min de retard sur les tâches planifiées.
-    - cron: "30 5 * * *"
+    # 05:07 UTC = 06:07 en hiver / 07:07 en été (heure suisse).
+    # Minute volontairement « impaire » : GitHub retarde ou saute plus souvent
+    # les tâches planifiées à l'heure pile ou à la demi-heure (le 25.11.2026,
+    # le passage de 05:30 n'a jamais eu lieu).
+    - cron: "7 5 * * *"
   workflow_dispatch: {}   # bouton "Run workflow" pour lancer à la main
 
 permissions:
