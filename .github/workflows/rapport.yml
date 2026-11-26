@@ -1,13 +1,11 @@
 name: Rapport réseaux MMEA
 
 on:
-  schedule:
-    # 05:07 UTC = 06:07 en hiver / 07:07 en été (heure suisse).
-    # Minute volontairement « impaire » : GitHub retarde ou saute plus souvent
-    # les tâches planifiées à l'heure pile ou à la demi-heure (le 25.11.2026,
-    # le passage de 05:30 n'a jamais eu lieu).
-    - cron: "7 5 * * *"
-  workflow_dispatch: {}   # bouton "Run workflow" pour lancer à la main
+  # Pas d'horaire GitHub : les passages planifiés étaient souvent sautés.
+  # Le workflow est lancé chaque matin vers 4h58 (heure suisse) par la tâche
+  # planifiée Claude « Rapport quotidien réseaux MMEA », ou à la main avec le
+  # bouton "Run workflow".
+  workflow_dispatch: {}
 
 permissions:
   contents: write   # pour sauvegarder state.json dans le repo
