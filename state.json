@@ -2,6 +2,12 @@
  "facebook": {
   "followers": 7,
   "posts": {
+   "284168364785456_122337981590305889": {
+    "likes": 0,
+    "created": "2026-11-25T16:17:10+0000",
+    "text": "Le fil du bois suivi d’un panneau à l’autre. C’est un détail que tout le monde voit, et que personne ne remarque.\n\nArmoi",
+    "link": "https://www.facebook.com/122337856568305889/posts/122337981590305889"
+   },
    "284168364785456_122337787706305889": {
     "likes": 0,
     "created": "2026-11-23T17:04:43+0000",
@@ -29,10 +35,16 @@
   }
  },
  "instagram": {
-  "followers": 19,
+  "followers": 24,
   "posts": {
+   "17913879633307506": {
+    "likes": 2,
+    "created": "2026-11-25T16:17:11+0000",
+    "text": "Le fil du bois suivi d’un panneau à l’autre. C’est un détail que tout le monde voit, et que personne ne remarque.\n\nArmoi",
+    "link": "https://www.instagram.com/p/DgK76H4uUax/"
+   },
    "18642187837054206": {
-    "likes": 7,
+    "likes": 8,
     "created": "2026-11-23T17:03:46+0000",
     "text": "Habiller une scène, c'est intégrer les contraintes phoniques et acoustiques à l'esthétique du lieu.\n\nPanneaux acoustique",
     "link": "https://www.instagram.com/p/DgF333juc8Y/"
@@ -45,5 +57,5 @@
    }
   }
  },
- "last_run": "2026-11-25T07:01:17+0000"
+ "last_run": "2026-11-26T06:47:38+0000"
 }
